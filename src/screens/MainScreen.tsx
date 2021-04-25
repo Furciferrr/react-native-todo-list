@@ -42,7 +42,7 @@ export const MainScreen: React.FC<{}> = () => {
       </View>
   }
   let content = (
-    <View style={{ width: deviceWidth }}>
+    <View style={{ width: deviceWidth, flex: 1 }}>
       <FlatList
         data={todos}
         keyExtractor={(item) => item.id}
@@ -64,7 +64,7 @@ export const MainScreen: React.FC<{}> = () => {
     );
   }
   return (
-    <View>
+    <View style={styles.container}>
       <AddTodo addTodo={addTodo} />
       {content}
     </View>
@@ -72,6 +72,9 @@ export const MainScreen: React.FC<{}> = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   imgWrap: {
     alignItems: "center",
     justifyContent: "center",

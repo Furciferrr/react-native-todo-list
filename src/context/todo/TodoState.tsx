@@ -35,7 +35,7 @@ export const TodoState: React.FC<any> = ({ children }) => {
             style: "destructive",
             onPress: async () => {
               changeScreen(null)
-              await Http.delete(`${url}/${id}.json`)         
+              await Http.delete(`${url}/${id}.json`)
               dispatch(actionsTodo.removeTodo(id)) 
             },
           },
